@@ -1,0 +1,29 @@
+{
+  "name": "travelmate-quick-start",
+  "version": "1.0.0",
+  "description": "Quick start scripts for TravelMate Travel Chatbot Platform",
+  "scripts": {
+    "dev": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && npm install",
+    "install-backend": "cd backend && pip install -r requirements.txt",
+    "setup": "npm run install-frontend && npm run install-backend",
+    "start": "concurrently \"npm run dev\" \"cd backend && uvicorn main:app --reload\"",
+    "test": "cd frontend && npm test",
+    "lint": "cd frontend && npm run lint",
+    "demo": "echo \"🌟 TravelMate Demo ready at http://localhost:3000/demo\""
+  },
+  "keywords": [
+    "travel",
+    "chatbot", 
+    "vietnam",
+    "ai",
+    "react",
+    "fastapi",
+    "payment"
+  ],
+  "author": "Techness Team",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

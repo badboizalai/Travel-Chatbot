@@ -1,0 +1,170 @@
+version: '3.8'
+
+services:
+  # Production Database
+  db:
+    image: postgres:15-alpine
+    container_name: travelmate_prod_db
+    environment:
+      POSTGRES_DB: travel_db
+      POSTGRES_USER: travelmate
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_prod_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U travelmate"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - travelmate-network
+
+  # Production Redis
+  redis:
+    image: redis:7-alpine
+    container_name: travelmate_prod_redis
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_prod_data:/data
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - travelmate-network
+
+  # Langflow Production
+  langflow:
+    image: langflowai/langflow:latest
+    container_name: travelmate_prod_langflow
+    environment:
+      - LANGFLOW_PORT=8080
+      - LANGFLOW_AUTO_LOGIN=false
+      - LANGFLOW_STORE_ENVIRONMENT_VARIABLES=true
+      - LANGFLOW_DATABASE_URL=postgresql://travelmate:${DB_PASSWORD}@db:5432/langflow_db
+      - LANGFLOW_REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379/1
+    volumes:
+      - langflow_prod_data:/app/.langflow
+      - langflow_prod_flows:/root/.langflow
+      - ./custom:/app/flows
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - travelmate-network
+
+  # Production Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    container_name: travelmate_prod_backend
+    environment:
+      - DEBUG=False
+      - DATABASE_URL=postgresql://travelmate:${DB_PASSWORD}@db:5432/travel_db
+      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379/0
+      - LANGFLOW_HOST=http://langflow:8080
+      - JWT_SECRET=${JWT_SECRET}
+      - CORS_ORIGINS=["https://travelmate.com","https://www.travelmate.com"]
+    volumes:
+      - ./backend/logs:/app/logs
+      - backend_prod_data:/app/data
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      langflow:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - travelmate-network
+
+  # Production Frontend (Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    container_name: travelmate_prod_frontend
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - travelmate-network
+
+  # Monitoring (Optional)
+  monitoring:
+    image: prom/prometheus:latest
+    container_name: travelmate_monitoring
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+    networks:
+      - travelmate-network
+
+volumes:
+  postgres_prod_data:
+    driver: local
+  redis_prod_data:
+    driver: local
+  langflow_prod_data:
+    driver: local
+  langflow_prod_flows:
+    driver: local
+  backend_prod_data:
+    driver: local
+  prometheus_data:
+    driver: local
+
+networks:
+  travelmate-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
