@@ -68,6 +68,32 @@ if (Test-Path $envExample) {
 Write-Host "`n🚀 Starting development server..." -ForegroundColor Cyan
 Write-Host "   Frontend will be available at: http://localhost:3000" -ForegroundColor Green
 Write-Host "   Demo page: http://localhost:3000/demo" -ForegroundColor Green
+
+# Start Flow ID sync in background if Docker is running
+try {
+    $dockerRunning = docker ps 2>$null
+    if ($dockerRunning) {
+        Write-Host "🔄 Starting Flow ID auto-sync..." -ForegroundColor Yellow
+        
+        # Go back to root directory for sync script
+        Set-Location "e:\EXE\Travel Chatbot"
+          # Start sync in background job
+        $syncJob = Start-Job -ScriptBlock {
+            & "e:\EXE\New folder\Travel Chatbot\scripts\core\sync-flow-id.ps1" -Watch -Interval 30
+        }
+        
+        Write-Host "✅ Flow ID auto-sync started (Job ID: $($syncJob.Id))" -ForegroundColor Green
+        Write-Host "   Flow ID will be automatically synchronized every 30 seconds" -ForegroundColor Green
+        
+        # Go back to frontend directory
+        Set-Location $frontendPath
+    } else {
+        Write-Host "⚠️  Docker not running - Flow ID auto-sync disabled" -ForegroundColor Yellow
+    }
+} catch {
+    Write-Host "⚠️  Could not start Flow ID auto-sync" -ForegroundColor Yellow
+}
+
 Write-Host "`n   Press Ctrl+C to stop the server" -ForegroundColor Yellow
 Write-Host "=" * 50 -ForegroundColor Cyan
 

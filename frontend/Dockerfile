@@ -11,8 +11,11 @@ RUN npm install
 # Copy source code
 COPY . .
 
+# Make startup script executable
+RUN chmod +x startup.sh
+
 # Expose port
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "start"]
+# Start the application with sync
+CMD ["./startup.sh"]

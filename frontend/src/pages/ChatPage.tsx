@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import api from '../services/api';
-import langflowApi from '../services/langflowApi';
+import { chatService } from '../services/api';
+import { useAuth } from '../hooks/useAuth';
 
 interface Message {
   id: string;
@@ -56,8 +57,11 @@ const ChatPage = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [langflowStatus, setLangflowStatus] = useState<'checking' | 'online' | 'offline'>('checking');
+  const [chatStatus, setChatStatus] = useState<'checking' | 'online' | 'offline'>('checking');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  
+  // Get user info from auth hook
+  const { user } = useAuth();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -65,20 +69,41 @@ const ChatPage = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
   useEffect(() => {
-    // Check Langflow API status and load chat history
-    checkLangflowStatus();
+    // Check backend status and load chat history
+    checkBackendStatus();
     loadChatHistory();
-  }, []);
+    
+    // Add welcome message with user context
+    if (messages.length === 0) {
+      const userName = user?.full_name || user?.username || 'bạn';
+      const userEmail = user?.email;
+      
+      let welcomeContent = `👋 **Xin chào ${userName}!** Chào mừng đến với TravelMate AI Chat.\n\n`;
+      
+      if (userEmail) {
+        welcomeContent += `📧 Tôi đã ghi nhận email của bạn: **${userEmail}**\n\n`;
+      }
+      
+      welcomeContent += `Hãy hỏi tôi về du lịch Việt Nam!`;
+      
+      const welcomeMessage: Message = {
+        id: 'welcome',
+        content: welcomeContent,
+        isUser: false,
+        timestamp: new Date()
+      };
+      setMessages([welcomeMessage]);
+    }
+  }, [user]);
 
-  const checkLangflowStatus = async () => {
+  const checkBackendStatus = async () => {
     try {
-      const isHealthy = await langflowApi.checkHealth();
-      setLangflowStatus(isHealthy ? 'online' : 'offline');
+      const response = await api.get('/health');
+      setChatStatus('online');
     } catch (error) {
-      console.error('Failed to check Langflow status:', error);
-      setLangflowStatus('offline');
+      console.error('Failed to check backend status:', error);
+      setChatStatus('offline');
     }
   };
 
@@ -95,8 +120,7 @@ const ChatPage = () => {
     } catch (error) {
       console.error('Failed to load chat history:', error);
     }
-  };
-  const sendMessage = async () => {
+  };  const sendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return;
 
     const userMessage: Message = {
@@ -112,12 +136,21 @@ const ChatPage = () => {
     setIsLoading(true);
 
     try {
-      // Use Langflow API instead of backend API
-      const response = await langflowApi.sendMessage(messageToSend);
+      // Create user context
+      const userContext = {
+        userId: user?.id,
+        email: user?.email,
+        username: user?.username,
+        fullName: user?.full_name,
+        isAuthenticated: !!user
+      };
+      
+      // Use chatService with user context
+      const response = await chatService.sendMessage(messageToSend, userContext, 'chat-page-session');
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: response,
+        content: response.response,
         isUser: false,
         timestamp: new Date()
       };
@@ -127,7 +160,7 @@ const ChatPage = () => {
       console.error('Failed to send message:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: 'Sorry, I encountered an error. Please try again later.',
+        content: 'Xin lỗi, tôi gặp vấn đề kỹ thuật. Vui lòng thử lại sau.',
         isUser: false,
         timestamp: new Date()
       };
@@ -152,14 +185,13 @@ const ChatPage = () => {
             <div>
               <h1 className="text-2xl font-bold text-gray-800">TravelMate Chat</h1>
               <p className="text-gray-600">Ask me anything about travel, weather, bookings!</p>
-            </div>
-            <div className="flex items-center space-x-2">
+            </div>            <div className="flex items-center space-x-2">
               <div className={`w-3 h-3 rounded-full ${
-                langflowStatus === 'online' ? 'bg-green-500' : 
-                langflowStatus === 'offline' ? 'bg-red-500' : 'bg-yellow-500'
+                chatStatus === 'online' ? 'bg-green-500' : 
+                chatStatus === 'offline' ? 'bg-red-500' : 'bg-yellow-500'
               }`}></div>
               <span className="text-sm text-gray-600">
-                AI {langflowStatus === 'checking' ? 'Checking...' : langflowStatus}
+                AI {chatStatus === 'checking' ? 'Đang kiểm tra...' : chatStatus === 'online' ? 'Trực tuyến' : 'Offline'}
               </span>
             </div>
           </div>

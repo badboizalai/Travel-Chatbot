@@ -17,9 +17,9 @@ class LangflowService:
         self._cached_flow_id = None
         
     def get_persistent_flow_id(self) -> Optional[str]:
-        """Lấy flow ID từ file persistent"""
+        """Lấy flow ID từ file persistent và sync data"""
         try:
-            # Thử đọc từ volume mount
+            # 1. Thử đọc từ uploader persistent file
             flow_id_file = "/app/data/flow_id.txt"
             if os.path.exists(flow_id_file):
                 with open(flow_id_file, 'r') as f:
@@ -27,6 +27,18 @@ class LangflowService:
                     if flow_id:
                         print(f"✅ Found persistent flow ID: {flow_id}")
                         return flow_id
+            
+            # 2. Thử đọc từ backend sync data  
+            sync_file = "/app/data/backend_env_sync.json"
+            if os.path.exists(sync_file):
+                with open(sync_file, 'r') as f:
+                    import json
+                    sync_data = json.load(f)
+                    flow_id = sync_data.get('flow_id')
+                    if flow_id:
+                        print(f"✅ Found flow ID from sync data: {flow_id}")
+                        return flow_id
+                        
         except Exception as e:
             print(f"⚠️ Could not read persistent flow ID: {e}")
         return None
@@ -70,8 +82,7 @@ class LangflowService:
         if persistent_id:
             self._cached_flow_id = persistent_id
             return persistent_id
-            
-        # 4. Auto-detect từ LangFlow
+              # 4. Auto-detect từ LangFlow
         detected_id = await self.auto_detect_flow_id()
         if detected_id:
             self._cached_flow_id = detected_id
@@ -79,8 +90,8 @@ class LangflowService:
             
         raise Exception("❌ Could not determine flow ID. Please check LangFlow configuration.")
         
-    async def send_message(self, message: str, session_id: Optional[str] = None) -> Dict[str, Any]:
-        """Send message to Langflow and get response"""
+    async def send_message(self, message: str, session_id: Optional[str] = None, user_context: Optional[Dict] = None) -> Dict[str, Any]:
+        """Send message to Langflow and get response with user context"""
         # Lấy flow ID
         flow_id = await self.get_flow_id()
         url = f"{self.langflow_host}/api/v1/run/{flow_id}"
@@ -92,18 +103,38 @@ class LangflowService:
         # Thêm authorization nếu có
         if self.app_token:
             headers["Authorization"] = f"Bearer {self.app_token}"
+          # Prepare message with user context
+        enhanced_message = message
+        if user_context and hasattr(user_context, 'isAuthenticated') and user_context.isAuthenticated:
+            user_info = []
+            if hasattr(user_context, 'email') and user_context.email:
+                user_info.append(f"Email: {user_context.email}")
+            if hasattr(user_context, 'fullName') and user_context.fullName:
+                user_info.append(f"Tên: {user_context.fullName}")
+            if hasattr(user_context, 'username') and user_context.username:
+                user_info.append(f"Username: {user_context.username}")
+            
+            if user_info:
+                enhanced_message = f"[Thông tin người dùng: {', '.join(user_info)}]\n\n{message}"
         
         payload = {
-            "input_value": message,
+            "input_value": enhanced_message,
             "input_type": "chat",
             "output_type": "chat",
             "tweaks": {
-                "ChatInput-input_value": message
+                "ChatInput-input_value": enhanced_message
             }
         }
         
         if session_id:
             payload["session_id"] = session_id
+              # Add user context to payload for advanced processing
+        if user_context:
+            # Convert Pydantic model to dict if needed
+            if hasattr(user_context, 'dict'):
+                payload["user_context"] = user_context.dict()
+            else:
+                payload["user_context"] = user_context
             
         try:
             async with httpx.AsyncClient(timeout=30.0) as client:

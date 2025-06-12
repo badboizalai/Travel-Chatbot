@@ -4,11 +4,14 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from contextlib import asynccontextmanager
 import uvicorn
 import os
+import asyncio
 from dotenv import load_dotenv
+import asyncio
 
 from routes import auth, chatbot, weather, booking, admin, search
 from config.database import engine, Base
 from config.redis_client import redis_client
+from services.flow_id_broadcast_service import flow_id_broadcast_service
 
 load_dotenv()
 
@@ -24,9 +27,17 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         print(f"❌ Redis connection failed: {e}")
     
+    # Start Flow ID monitoring
+    try:
+        asyncio.create_task(flow_id_broadcast_service.start_monitoring())
+        print("✅ Flow ID monitoring started")
+    except Exception as e:
+        print(f"⚠️ Flow ID monitoring failed to start: {e}")
+    
     yield
     
     # Shutdown
+    flow_id_broadcast_service.stop_monitoring()
     await redis_client.close()
 
 app = FastAPI(

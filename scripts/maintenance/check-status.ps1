@@ -29,7 +29,7 @@ function Add-Check($name, $status, $message, $action = "") {
 Write-Host "`n🏗️  CHECKING PROJECT STRUCTURE..." -ForegroundColor Yellow
 
 # Check core directories
-$coreDirectories = @("frontend", "backend", "docs", "scripts")
+$coreDirectories = @("frontend", "backend", "scripts", "custom")
 foreach ($dir in $coreDirectories) {
     if (Test-Path $dir) {
         Add-Check "Directory: $dir" "✅" "Found"
@@ -186,33 +186,29 @@ if ($errorCount -eq 0 -and $warningCount -eq 0) {
     Write-Host "`n🔧 Required actions:" -ForegroundColor Red
     foreach ($check in $checks | Where-Object { $_.Status -eq "❌" -and $_.Action }) {
         Write-Host "   • $($check.Action)" -ForegroundColor Blue
-    }
-    
-    Write-Host "`n📋 Priority order:" -ForegroundColor Yellow
+    }    Write-Host "`n📋 Priority order:" -ForegroundColor Yellow
     if (($checks | Where-Object { $_.Name -eq "Node.js" -and $_.Status -eq "❌" })) {
-        Write-Host "   1. Install Node.js: .\install-nodejs.ps1" -ForegroundColor Blue
+        Write-Host "   1. Install Node.js: .\run.ps1 setup" -ForegroundColor Blue
     }
     if (($checks | Where-Object { $_.Name -like "*Dependencies*" -and $_.Status -eq "❌" })) {
-        Write-Host "   2. Install dependencies: .\setup-complete.ps1" -ForegroundColor Blue
+        Write-Host "   2. Install dependencies: .\run.ps1 setup" -ForegroundColor Blue
     }
     if (($checks | Where-Object { $_.Name -like "*Environment*" -and $_.Status -ne "✅" })) {
-        Write-Host "   3. Configure environment files" -ForegroundColor Blue
+        Write-Host "   3. Configure environment files: .\run.ps1 setup" -ForegroundColor Blue
     }
 }
 
 Write-Host "`n📚 AVAILABLE SCRIPTS" -ForegroundColor Cyan
 Write-Host "=" * 30 -ForegroundColor Cyan
-Write-Host "• .\install-nodejs.ps1     - Install Node.js automatically" -ForegroundColor Blue
-Write-Host "• .\setup-complete.ps1     - Complete project setup" -ForegroundColor Blue
-Write-Host "• .\start-dev.ps1          - Start development server" -ForegroundColor Blue
-Write-Host "• .\build-prod.ps1         - Build for production" -ForegroundColor Blue
-Write-Host "• .\scripts\health-check.ps1 - System health check" -ForegroundColor Blue
+Write-Host "• .\run.ps1 setup          - Complete project setup" -ForegroundColor Blue
+Write-Host "• .\run.ps1 start          - Start development server" -ForegroundColor Blue
+Write-Host "• .\run.ps1 build          - Build for production" -ForegroundColor Blue
+Write-Host "• .\run.ps1 health         - System health check" -ForegroundColor Blue
+Write-Host "• .\run.ps1 test           - Run test suite" -ForegroundColor Blue
 
 Write-Host "`n📖 DOCUMENTATION" -ForegroundColor Cyan
 Write-Host "=" * 25 -ForegroundColor Cyan
-Write-Host "• README.md                - Project overview" -ForegroundColor Blue
-Write-Host "• FINAL_SETUP_GUIDE.md     - Complete setup guide" -ForegroundColor Blue
-Write-Host "• docs\PROJECT_STRUCTURE.md - Architecture details" -ForegroundColor Blue
-Write-Host "• docs\DEPLOYMENT_GUIDE.md  - Production deployment" -ForegroundColor Blue
+Write-Host "• README.md                - Comprehensive project documentation" -ForegroundColor Blue
+Write-Host "• CLEANUP_SUMMARY.md       - Cleanup and reorganization summary" -ForegroundColor Blue
 
 Write-Host "`n✨ TravelMate AI Chatbot Platform Status Check Complete!" -ForegroundColor Green

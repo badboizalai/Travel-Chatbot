@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { langflowApi } from '../services/langflowApi';
+import { useAuth } from '../hooks/useAuth';
+import { chatService } from '../services/api';
 
 interface Message {
   id: string;
@@ -59,6 +60,9 @@ const ChatWidget = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  
+  // Get user info from auth hook
+  const { user } = useAuth();
 
   // Auto-resize textarea function
   const resizeTextarea = () => {
@@ -82,18 +86,29 @@ const ChatWidget = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
   useEffect(() => {
     if (isOpen && messages.length === 0) {
+      // Create personalized welcome message
+      const userName = user?.full_name || user?.username || 'bạn';
+      const userEmail = user?.email;
+      
+      let welcomeContent = `👋 **Xin chào ${userName}!** Tôi là TravelMate AI.\n\n`;
+      
+      if (userEmail) {
+        welcomeContent += `📧 Tôi đã ghi nhận email của bạn: **${userEmail}**\n\n`;
+      }
+      
+      welcomeContent += `Hãy hỏi tôi về du lịch Việt Nam!\n\n**Ví dụ:**\n- Điểm du lịch Hà Nội\n- Món ăn miền Trung\n- Lịch trình Sapa`;
+      
       const welcomeMessage: Message = {
         id: Date.now().toString(),
-        content: "👋 **Xin chào!** Tôi là TravelMate AI.\n\nHãy hỏi tôi về du lịch Việt Nam!\n\n**Ví dụ:**\n- Điểm du lịch Hà Nội\n- Món ăn miền Trung\n- Lịch trình Sapa",
+        content: welcomeContent,
         isUser: false,
         timestamp: new Date()
       };
       setMessages([welcomeMessage]);
     }
-  }, [isOpen, messages.length]);
+  }, [isOpen, messages.length, user]);
 
   // Auto-resize textarea when input changes
   useEffect(() => {
@@ -119,15 +134,22 @@ const ChatWidget = () => {
       textareaRef.current.style.height = 'auto';
     }
     setTimeout(resizeTextarea, 0);
-    setIsLoading(true);
-
-    try {
-      // Use the real Langflow API
-      const aiResponse = await langflowApi.sendMessage(currentInput, 'travel-chat-session');
+    setIsLoading(true);    try {
+      // Create user context to send with message
+      const userContext = {
+        userId: user?.id,
+        email: user?.email,
+        username: user?.username,
+        fullName: user?.full_name,
+        isAuthenticated: !!user
+      };
+      
+      // Use the backend API with user context
+      const response = await chatService.sendMessage(currentInput, userContext, 'travel-chat-session');
       
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: aiResponse,
+        content: response.response,
         isUser: false,
         timestamp: new Date()
       };
