@@ -10,7 +10,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatOutput",
-            "id": "ChatOutput-EHs7A",
+            "id": "ChatOutput-jp0il",
             "name": "message",
             "output_types": [
               "Message"
@@ -18,19 +18,19 @@
           },
           "targetHandle": {
             "fieldName": "message",
-            "id": "StoreMessage-scVNi",
+            "id": "StoreMessage-YGEi1",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatOutput-EHs7A{œdataTypeœ:œChatOutputœ,œidœ:œChatOutput-EHs7Aœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-StoreMessage-scVNi{œfieldNameœ:œmessageœ,œidœ:œStoreMessage-scVNiœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatOutput-jp0il{œdataTypeœ:œChatOutputœ,œidœ:œChatOutput-jp0ilœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-StoreMessage-YGEi1{œfieldNameœ:œmessageœ,œidœ:œStoreMessage-YGEi1œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatOutput-EHs7A",
-        "sourceHandle": "{œdataTypeœ:œChatOutputœ,œidœ:œChatOutput-EHs7Aœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "StoreMessage-scVNi",
-        "targetHandle": "{œfieldNameœ:œmessageœ,œidœ:œStoreMessage-scVNiœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatOutput-jp0il",
+        "sourceHandle": "{œdataTypeœ:œChatOutputœ,œidœ:œChatOutput-jp0ilœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "StoreMessage-YGEi1",
+        "targetHandle": "{œfieldNameœ:œmessageœ,œidœ:œStoreMessage-YGEi1œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -38,7 +38,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Memory",
-            "id": "Memory-2XUNc",
+            "id": "Memory-GmfUe",
             "name": "messages_text",
             "output_types": [
               "Message"
@@ -46,19 +46,19 @@
           },
           "targetHandle": {
             "fieldName": "history",
-            "id": "Prompt-grUEZ",
+            "id": "Prompt-mudLP",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-Memory-2XUNc{œdataTypeœ:œMemoryœ,œidœ:œMemory-2XUNcœ,œnameœ:œmessages_textœ,œoutput_typesœ:[œMessageœ]}-Prompt-grUEZ{œfieldNameœ:œhistoryœ,œidœ:œPrompt-grUEZœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-Memory-GmfUe{œdataTypeœ:œMemoryœ,œidœ:œMemory-GmfUeœ,œnameœ:œmessages_textœ,œoutput_typesœ:[œMessageœ]}-Prompt-mudLP{œfieldNameœ:œhistoryœ,œidœ:œPrompt-mudLPœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "Memory-2XUNc",
-        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-2XUNcœ,œnameœ:œmessages_textœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "Prompt-grUEZ",
-        "targetHandle": "{œfieldNameœ:œhistoryœ,œidœ:œPrompt-grUEZœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "Memory-GmfUe",
+        "sourceHandle": "{œdataTypeœ:œMemoryœ,œidœ:œMemory-GmfUeœ,œnameœ:œmessages_textœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "Prompt-mudLP",
+        "targetHandle": "{œfieldNameœ:œhistoryœ,œidœ:œPrompt-mudLPœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -66,7 +66,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-AD8Im",
+            "id": "ChatInput-88ftn",
             "name": "message",
             "output_types": [
               "Message"
@@ -74,19 +74,19 @@
           },
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "Agent-c7dEJ",
+            "id": "Agent-1enxB",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-ChatInput-AD8Im{œdataTypeœ:œChatInputœ,œidœ:œChatInput-AD8Imœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-Agent-c7dEJ{œfieldNameœ:œinput_valueœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-88ftn{œdataTypeœ:œChatInputœ,œidœ:œChatInput-88ftnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-Agent-1enxB{œfieldNameœ:œinput_valueœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-AD8Im",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-AD8Imœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "Agent-c7dEJ",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-88ftn",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-88ftnœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "Agent-1enxB",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -94,7 +94,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Prompt",
-            "id": "Prompt-grUEZ",
+            "id": "Prompt-mudLP",
             "name": "prompt",
             "output_types": [
               "Message"
@@ -102,19 +102,19 @@
           },
           "targetHandle": {
             "fieldName": "system_prompt",
-            "id": "Agent-c7dEJ",
+            "id": "Agent-1enxB",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-Prompt-grUEZ{œdataTypeœ:œPromptœ,œidœ:œPrompt-grUEZœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}-Agent-c7dEJ{œfieldNameœ:œsystem_promptœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-Prompt-mudLP{œdataTypeœ:œPromptœ,œidœ:œPrompt-mudLPœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}-Agent-1enxB{œfieldNameœ:œsystem_promptœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "Prompt-grUEZ",
-        "sourceHandle": "{œdataTypeœ:œPromptœ,œidœ:œPrompt-grUEZœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "Agent-c7dEJ",
-        "targetHandle": "{œfieldNameœ:œsystem_promptœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "Prompt-mudLP",
+        "sourceHandle": "{œdataTypeœ:œPromptœ,œidœ:œPrompt-mudLPœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "Agent-1enxB",
+        "targetHandle": "{œfieldNameœ:œsystem_promptœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -122,7 +122,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "Agent",
-            "id": "Agent-c7dEJ",
+            "id": "Agent-1enxB",
             "name": "response",
             "output_types": [
               "Message"
@@ -130,7 +130,7 @@
           },
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "ChatOutput-EHs7A",
+            "id": "ChatOutput-jp0il",
             "inputTypes": [
               "Data",
               "DataFrame",
@@ -139,12 +139,12 @@
             "type": "other"
           }
         },
-        "id": "reactflow__edge-Agent-c7dEJ{œdataTypeœ:œAgentœ,œidœ:œAgent-c7dEJœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-EHs7A{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-EHs7Aœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-Agent-1enxB{œdataTypeœ:œAgentœ,œidœ:œAgent-1enxBœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-jp0il{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-jp0ilœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "Agent-c7dEJ",
-        "sourceHandle": "{œdataTypeœ:œAgentœ,œidœ:œAgent-c7dEJœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChatOutput-EHs7A",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-EHs7Aœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+        "source": "Agent-1enxB",
+        "sourceHandle": "{œdataTypeœ:œAgentœ,œidœ:œAgent-1enxBœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-jp0il",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-jp0ilœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -152,7 +152,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "SearchComponent",
-            "id": "SearchComponent-b8MLu",
+            "id": "SearchComponent-HpQB2",
             "name": "component_as_tool",
             "output_types": [
               "Tool"
@@ -160,19 +160,19 @@
           },
           "targetHandle": {
             "fieldName": "tools",
-            "id": "Agent-c7dEJ",
+            "id": "Agent-1enxB",
             "inputTypes": [
               "Tool"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-SearchComponent-b8MLu{œdataTypeœ:œSearchComponentœ,œidœ:œSearchComponent-b8MLuœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-c7dEJ{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-SearchComponent-HpQB2{œdataTypeœ:œSearchComponentœ,œidœ:œSearchComponent-HpQB2œ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-1enxB{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "SearchComponent-b8MLu",
-        "sourceHandle": "{œdataTypeœ:œSearchComponentœ,œidœ:œSearchComponent-b8MLuœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
-        "target": "Agent-c7dEJ",
-        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
+        "source": "SearchComponent-HpQB2",
+        "sourceHandle": "{œdataTypeœ:œSearchComponentœ,œidœ:œSearchComponent-HpQB2œ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
+        "target": "Agent-1enxB",
+        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -180,7 +180,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "URLComponent",
-            "id": "URLComponent-0ok4X",
+            "id": "URLComponent-W80AO",
             "name": "component_as_tool",
             "output_types": [
               "Tool"
@@ -188,19 +188,19 @@
           },
           "targetHandle": {
             "fieldName": "tools",
-            "id": "Agent-c7dEJ",
+            "id": "Agent-1enxB",
             "inputTypes": [
               "Tool"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-URLComponent-0ok4X{œdataTypeœ:œURLComponentœ,œidœ:œURLComponent-0ok4Xœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-c7dEJ{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-URLComponent-W80AO{œdataTypeœ:œURLComponentœ,œidœ:œURLComponent-W80AOœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-1enxB{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "URLComponent-0ok4X",
-        "sourceHandle": "{œdataTypeœ:œURLComponentœ,œidœ:œURLComponent-0ok4Xœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
-        "target": "Agent-c7dEJ",
-        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
+        "source": "URLComponent-W80AO",
+        "sourceHandle": "{œdataTypeœ:œURLComponentœ,œidœ:œURLComponent-W80AOœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
+        "target": "Agent-1enxB",
+        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -208,7 +208,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "CalculatorComponent",
-            "id": "CalculatorComponent-pvF5O",
+            "id": "CalculatorComponent-w7WpF",
             "name": "component_as_tool",
             "output_types": [
               "Tool"
@@ -216,19 +216,19 @@
           },
           "targetHandle": {
             "fieldName": "tools",
-            "id": "Agent-c7dEJ",
+            "id": "Agent-1enxB",
             "inputTypes": [
               "Tool"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-CalculatorComponent-pvF5O{œdataTypeœ:œCalculatorComponentœ,œidœ:œCalculatorComponent-pvF5Oœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-c7dEJ{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-CalculatorComponent-w7WpF{œdataTypeœ:œCalculatorComponentœ,œidœ:œCalculatorComponent-w7WpFœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-1enxB{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "CalculatorComponent-pvF5O",
-        "sourceHandle": "{œdataTypeœ:œCalculatorComponentœ,œidœ:œCalculatorComponent-pvF5Oœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
-        "target": "Agent-c7dEJ",
-        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
+        "source": "CalculatorComponent-w7WpF",
+        "sourceHandle": "{œdataTypeœ:œCalculatorComponentœ,œidœ:œCalculatorComponent-w7WpFœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
+        "target": "Agent-1enxB",
+        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -236,7 +236,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "GoogleSearchAPICore",
-            "id": "GoogleSearchAPICore-QjoCw",
+            "id": "GoogleSearchAPICore-C6Qsz",
             "name": "component_as_tool",
             "output_types": [
               "Tool"
@@ -244,19 +244,19 @@
           },
           "targetHandle": {
             "fieldName": "tools",
-            "id": "Agent-c7dEJ",
+            "id": "Agent-1enxB",
             "inputTypes": [
               "Tool"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-GoogleSearchAPICore-QjoCw{œdataTypeœ:œGoogleSearchAPICoreœ,œidœ:œGoogleSearchAPICore-QjoCwœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-c7dEJ{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-GoogleSearchAPICore-C6Qsz{œdataTypeœ:œGoogleSearchAPICoreœ,œidœ:œGoogleSearchAPICore-C6Qszœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-1enxB{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "GoogleSearchAPICore-QjoCw",
-        "sourceHandle": "{œdataTypeœ:œGoogleSearchAPICoreœ,œidœ:œGoogleSearchAPICore-QjoCwœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
-        "target": "Agent-c7dEJ",
-        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
+        "source": "GoogleSearchAPICore-C6Qsz",
+        "sourceHandle": "{œdataTypeœ:œGoogleSearchAPICoreœ,œidœ:œGoogleSearchAPICore-C6Qszœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
+        "target": "Agent-1enxB",
+        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -264,7 +264,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "CurrentDate",
-            "id": "CurrentDate-ZWEsw",
+            "id": "CurrentDate-o9rxq",
             "name": "current_date",
             "output_types": [
               "Message"
@@ -272,19 +272,19 @@
           },
           "targetHandle": {
             "fieldName": "current_day",
-            "id": "Prompt-grUEZ",
+            "id": "Prompt-mudLP",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "reactflow__edge-CurrentDate-ZWEsw{œdataTypeœ:œCurrentDateœ,œidœ:œCurrentDate-ZWEswœ,œnameœ:œcurrent_dateœ,œoutput_typesœ:[œMessageœ]}-Prompt-grUEZ{œfieldNameœ:œcurrent_dayœ,œidœ:œPrompt-grUEZœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-CurrentDate-o9rxq{œdataTypeœ:œCurrentDateœ,œidœ:œCurrentDate-o9rxqœ,œnameœ:œcurrent_dateœ,œoutput_typesœ:[œMessageœ]}-Prompt-mudLP{œfieldNameœ:œcurrent_dayœ,œidœ:œPrompt-mudLPœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "CurrentDate-ZWEsw",
-        "sourceHandle": "{œdataTypeœ:œCurrentDateœ,œidœ:œCurrentDate-ZWEswœ,œnameœ:œcurrent_dateœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "Prompt-grUEZ",
-        "targetHandle": "{œfieldNameœ:œcurrent_dayœ,œidœ:œPrompt-grUEZœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "CurrentDate-o9rxq",
+        "sourceHandle": "{œdataTypeœ:œCurrentDateœ,œidœ:œCurrentDate-o9rxqœ,œnameœ:œcurrent_dateœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "Prompt-mudLP",
+        "targetHandle": "{œfieldNameœ:œcurrent_dayœ,œidœ:œPrompt-mudLPœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -292,7 +292,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "MCPTools",
-            "id": "MCPTools-uYPwu",
+            "id": "MCPTools-xMeAN",
             "name": "component_as_tool",
             "output_types": [
               "Tool"
@@ -300,25 +300,53 @@
           },
           "targetHandle": {
             "fieldName": "tools",
-            "id": "Agent-c7dEJ",
+            "id": "Agent-1enxB",
             "inputTypes": [
               "Tool"
             ],
             "type": "other"
           }
         },
-        "id": "reactflow__edge-MCPTools-uYPwu{œdataTypeœ:œMCPToolsœ,œidœ:œMCPTools-uYPwuœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-c7dEJ{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-MCPTools-xMeAN{œdataTypeœ:œMCPToolsœ,œidœ:œMCPTools-xMeANœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-1enxB{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "MCPTools-uYPwu",
-        "sourceHandle": "{œdataTypeœ:œMCPToolsœ,œidœ:œMCPTools-uYPwuœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
-        "target": "Agent-c7dEJ",
-        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-c7dEJœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
+        "source": "MCPTools-xMeAN",
+        "sourceHandle": "{œdataTypeœ:œMCPToolsœ,œidœ:œMCPTools-xMeANœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
+        "target": "Agent-1enxB",
+        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "GmailAPI",
+            "id": "GmailAPI-lXhKn",
+            "name": "component_as_tool",
+            "output_types": [
+              "Tool"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "tools",
+            "id": "Agent-1enxB",
+            "inputTypes": [
+              "Tool"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "reactflow__edge-GmailAPI-lXhKn{œdataTypeœ:œGmailAPIœ,œidœ:œGmailAPI-lXhKnœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}-Agent-1enxB{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "GmailAPI-lXhKn",
+        "sourceHandle": "{œdataTypeœ:œGmailAPIœ,œidœ:œGmailAPI-lXhKnœ,œnameœ:œcomponent_as_toolœ,œoutput_typesœ:[œToolœ]}",
+        "target": "Agent-1enxB",
+        "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgent-1enxBœ,œinputTypesœ:[œToolœ],œtypeœ:œotherœ}"
       }
     ],
     "nodes": [
       {
         "data": {
-          "id": "ChatInput-AD8Im",
+          "id": "ChatInput-88ftn",
           "node": {
             "base_classes": [
               "Message"
@@ -615,9 +643,9 @@
           "type": "ChatInput"
         },
         "dragging": false,
-        "id": "ChatInput-AD8Im",
+        "id": "ChatInput-88ftn",
         "measured": {
-          "height": 475,
+          "height": 477,
           "width": 320
         },
         "position": {
@@ -629,7 +657,7 @@
       },
       {
         "data": {
-          "id": "ChatOutput-EHs7A",
+          "id": "ChatOutput-jp0il",
           "node": {
             "base_classes": [
               "Message"
@@ -923,9 +951,9 @@
           "type": "ChatOutput"
         },
         "dragging": false,
-        "id": "ChatOutput-EHs7A",
+        "id": "ChatOutput-jp0il",
         "measured": {
-          "height": 397,
+          "height": 399,
           "width": 320
         },
         "position": {
@@ -937,7 +965,7 @@
       },
       {
         "data": {
-          "id": "Prompt-grUEZ",
+          "id": "Prompt-mudLP",
           "node": {
             "base_classes": [
               "Message"
@@ -1103,9 +1131,9 @@
           "type": "Prompt"
         },
         "dragging": false,
-        "id": "Prompt-grUEZ",
+        "id": "Prompt-mudLP",
         "measured": {
-          "height": 493,
+          "height": 494,
           "width": 320
         },
         "position": {
@@ -1117,7 +1145,7 @@
       },
       {
         "data": {
-          "id": "Memory-2XUNc",
+          "id": "Memory-GmfUe",
           "node": {
             "base_classes": [
               "Data",
@@ -1381,7 +1409,7 @@
           "type": "Memory"
         },
         "dragging": false,
-        "id": "Memory-2XUNc",
+        "id": "Memory-GmfUe",
         "measured": {
           "height": 307,
           "width": 320
@@ -1395,7 +1423,7 @@
       },
       {
         "data": {
-          "id": "StoreMessage-scVNi",
+          "id": "StoreMessage-YGEi1",
           "node": {
             "base_classes": [
               "Message"
@@ -1577,9 +1605,9 @@
           "type": "StoreMessage"
         },
         "dragging": false,
-        "id": "StoreMessage-scVNi",
+        "id": "StoreMessage-YGEi1",
         "measured": {
-          "height": 257,
+          "height": 258,
           "width": 320
         },
         "position": {
@@ -1591,7 +1619,7 @@
       },
       {
         "data": {
-          "id": "Agent-c7dEJ",
+          "id": "Agent-1enxB",
           "node": {
             "base_classes": [
               "Message"
@@ -1951,8 +1979,6 @@
                   "gemini-1.5-pro",
                   "gemini-1.5-flash-latest",
                   "gemini-1.5-flash-8b-latest",
-                  "gemini-1.5-flash-8b-exp-0924",
-                  "gemini-1.5-flash-8b-exp-0827",
                   "gemini-1.5-flash-8b-001",
                   "gemini-1.5-flash-8b",
                   "gemini-1.5-flash-002",
@@ -2291,21 +2317,21 @@
           "type": "Agent"
         },
         "dragging": false,
-        "id": "Agent-c7dEJ",
+        "id": "Agent-1enxB",
         "measured": {
-          "height": 791,
+          "height": 795,
           "width": 320
         },
         "position": {
           "x": 1706.9140399688483,
           "y": 307.7646448552979
         },
-        "selected": true,
+        "selected": false,
         "type": "genericNode"
       },
       {
         "data": {
-          "id": "SearchComponent-b8MLu",
+          "id": "SearchComponent-HpQB2",
           "node": {
             "base_classes": [
               "Data",
@@ -2582,9 +2608,9 @@
           "type": "SearchComponent"
         },
         "dragging": false,
-        "id": "SearchComponent-b8MLu",
+        "id": "SearchComponent-HpQB2",
         "measured": {
-          "height": 419,
+          "height": 420,
           "width": 320
         },
         "position": {
@@ -2596,7 +2622,7 @@
       },
       {
         "data": {
-          "id": "URLComponent-0ok4X",
+          "id": "URLComponent-W80AO",
           "node": {
             "base_classes": [
               "Data",
@@ -2936,9 +2962,9 @@
           "type": "URLComponent"
         },
         "dragging": false,
-        "id": "URLComponent-0ok4X",
+        "id": "URLComponent-W80AO",
         "measured": {
-          "height": 357,
+          "height": 358,
           "width": 320
         },
         "position": {
@@ -2950,7 +2976,7 @@
       },
       {
         "data": {
-          "id": "CalculatorComponent-pvF5O",
+          "id": "CalculatorComponent-w7WpF",
           "node": {
             "base_classes": [
               "Data"
@@ -3083,7 +3109,7 @@
           "type": "CalculatorComponent"
         },
         "dragging": false,
-        "id": "CalculatorComponent-pvF5O",
+        "id": "CalculatorComponent-w7WpF",
         "measured": {
           "height": 247,
           "width": 320
@@ -3097,7 +3123,7 @@
       },
       {
         "data": {
-          "id": "GoogleSearchAPICore-QjoCw",
+          "id": "GoogleSearchAPICore-C6Qsz",
           "node": {
             "base_classes": [
               "DataFrame"
@@ -3291,9 +3317,9 @@
           "type": "GoogleSearchAPICore"
         },
         "dragging": false,
-        "id": "GoogleSearchAPICore-QjoCw",
+        "id": "GoogleSearchAPICore-C6Qsz",
         "measured": {
-          "height": 493,
+          "height": 495,
           "width": 320
         },
         "position": {
@@ -3305,7 +3331,7 @@
       },
       {
         "data": {
-          "id": "CurrentDate-ZWEsw",
+          "id": "CurrentDate-o9rxq",
           "node": {
             "base_classes": [
               "Message"
@@ -3992,7 +4018,7 @@
           "type": "CurrentDate"
         },
         "dragging": false,
-        "id": "CurrentDate-ZWEsw",
+        "id": "CurrentDate-o9rxq",
         "measured": {
           "height": 249,
           "width": 320
@@ -4006,7 +4032,7 @@
       },
       {
         "data": {
-          "id": "MCPTools-uYPwu",
+          "id": "MCPTools-xMeAN",
           "node": {
             "base_classes": [
               "Message"
@@ -4352,9 +4378,9 @@
           "type": "MCPTools"
         },
         "dragging": false,
-        "id": "MCPTools-uYPwu",
+        "id": "MCPTools-xMeAN",
         "measured": {
-          "height": 389,
+          "height": 391,
           "width": 320
         },
         "position": {
@@ -4363,31 +4389,1647 @@
         },
         "selected": false,
         "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "GmailAPI-lXhKn",
+          "node": {
+            "base_classes": [
+              "DataFrame"
+            ],
+            "beta": false,
+            "category": "composio",
+            "conditional_paths": [],
+            "custom_fields": {},
+            "display_name": "Gmail",
+            "documentation": "https://docs.composio.dev",
+            "edited": false,
+            "field_order": [
+              "entity_id",
+              "api_key",
+              "auth_link",
+              "action",
+              "recipient_email",
+              "subject",
+              "body",
+              "cc",
+              "bcc",
+              "is_html",
+              "gmail_user_id",
+              "max_results",
+              "message_id",
+              "thread_id",
+              "query",
+              "message_body",
+              "label_name",
+              "label_id",
+              "label_ids",
+              "label_list_visibility",
+              "message_list_visibility",
+              "page_token",
+              "include_spam_trash",
+              "format",
+              "resource_name",
+              "person_fields",
+              "attachment_id",
+              "file_name",
+              "attachment"
+            ],
+            "frozen": false,
+            "icon": "Google",
+            "key": "GmailAPI",
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Toolset",
+                "hidden": false,
+                "method": "to_toolkit",
+                "name": "component_as_tool",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Tool",
+                "tool_mode": true,
+                "types": [
+                  "Tool"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "score": 0.2,
+            "template": {
+              "_type": "Component",
+              "action": {
+                "_input_type": "SortableListInput",
+                "advanced": false,
+                "display_name": "Action",
+                "dynamic": false,
+                "helper_text": null,
+                "helper_text_metadata": {},
+                "info": "",
+                "limit": 1,
+                "name": "action",
+                "options": [
+                  {
+                    "metadata": "GMAIL_SEND_EMAIL",
+                    "name": "Send Email"
+                  },
+                  {
+                    "metadata": "GMAIL_FETCH_EMAILS",
+                    "name": "Fetch Emails"
+                  },
+                  {
+                    "metadata": "GMAIL_GET_PROFILE",
+                    "name": "Get User Profile"
+                  },
+                  {
+                    "metadata": "GMAIL_FETCH_MESSAGE_BY_MESSAGE_ID",
+                    "name": "Get Email By ID"
+                  },
+                  {
+                    "metadata": "GMAIL_CREATE_EMAIL_DRAFT",
+                    "name": "Create Draft Email"
+                  },
+                  {
+                    "metadata": "GMAIL_FETCH_MESSAGE_BY_THREAD_ID",
+                    "name": "Get Message By Thread ID"
+                  },
+                  {
+                    "metadata": "GMAIL_LIST_THREADS",
+                    "name": "List Email Threads"
+                  },
+                  {
+                    "metadata": "GMAIL_REPLY_TO_THREAD",
+                    "name": "Reply To Thread"
+                  },
+                  {
+                    "metadata": "GMAIL_LIST_LABELS",
+                    "name": "List Email Labels"
+                  },
+                  {
+                    "metadata": "GMAIL_CREATE_LABEL",
+                    "name": "Create Email Label"
+                  },
+                  {
+                    "metadata": "GMAIL_GET_PEOPLE",
+                    "name": "Get Contacts"
+                  },
+                  {
+                    "metadata": "GMAIL_REMOVE_LABEL",
+                    "name": "Delete Email Label"
+                  },
+                  {
+                    "metadata": "GMAIL_GET_ATTACHMENT",
+                    "name": "Get Attachment"
+                  }
+                ],
+                "placeholder": "Select action",
+                "real_time_refresh": true,
+                "required": false,
+                "search_category": [],
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "sortableList",
+                "value": "disabled"
+              },
+              "api_key": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "Composio API Key",
+                "dynamic": false,
+                "info": "",
+                "input_types": [],
+                "load_from_db": false,
+                "name": "api_key",
+                "password": true,
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "str",
+                "value": "cgnll3rauz9snitqdrxpd"
+              },
+              "attachment": {
+                "_input_type": "FileInput",
+                "advanced": false,
+                "display_name": "Add Attachment",
+                "dynamic": false,
+                "fileTypes": [
+                  "csv",
+                  "txt",
+                  "doc",
+                  "docx",
+                  "xls",
+                  "xlsx",
+                  "pdf",
+                  "png",
+                  "jpg",
+                  "jpeg",
+                  "gif",
+                  "zip",
+                  "rar",
+                  "ppt",
+                  "pptx"
+                ],
+                "file_path": "",
+                "info": "Add an attachment",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "attachment",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "temp_file": false,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "file",
+                "value": ""
+              },
+              "attachment_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Attachment ID",
+                "dynamic": false,
+                "info": "Id of the attachment",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "attachment_id",
+                "placeholder": "",
+                "required": true,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "auth_link": {
+                "_input_type": "AuthInput",
+                "advanced": false,
+                "auth_tooltip": "Disconnect",
+                "dynamic": false,
+                "info": "",
+                "name": "auth_link",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "auth",
+                "value": "validated"
+              },
+              "bcc": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "BCC",
+                "dynamic": false,
+                "info": "Email addresses to BCC (Blind Carbon Copy) in the email, separated by commas",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "bcc",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "body": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Body",
+                "dynamic": false,
+                "info": "Content of the email",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "body",
+                "placeholder": "",
+                "required": true,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "cc": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "CC",
+                "dynamic": false,
+                "info": "Email addresses to CC (Carbon Copy) in the email, separated by commas",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "cc",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "import json\nfrom typing import Any\n\nfrom composio import Action\n\nfrom langflow.base.composio.composio_base import ComposioBaseComponent\nfrom langflow.inputs import (\n    BoolInput,\n    FileInput,\n    IntInput,\n    MessageTextInput,\n)\nfrom langflow.logging import logger\n\n\nclass ComposioGmailAPIComponent(ComposioBaseComponent):\n    \"\"\"Gmail API component for interacting with Gmail services.\"\"\"\n\n    display_name: str = \"Gmail\"\n    name = \"GmailAPI\"\n    icon = \"Google\"\n    documentation: str = \"https://docs.composio.dev\"\n    app_name = \"gmail\"\n\n    # Gmail-specific actions\n    _actions_data: dict = {\n        \"GMAIL_SEND_EMAIL\": {\n            \"display_name\": \"Send Email\",\n            \"action_fields\": [\n                \"recipient_email\",\n                \"subject\",\n                \"body\",\n                \"cc\",\n                \"bcc\",\n                \"is_html\",\n                \"gmail_user_id\",\n                \"attachment\",\n            ],\n        },\n        \"GMAIL_FETCH_EMAILS\": {\n            \"display_name\": \"Fetch Emails\",\n            \"action_fields\": [\n                \"gmail_user_id\",\n                \"max_results\",\n                \"query\",\n                \"page_token\",\n                \"label_ids\",\n                \"include_spam_trash\",\n            ],\n            \"get_result_field\": True,\n            \"result_field\": \"messages\",\n        },\n        \"GMAIL_GET_PROFILE\": {\n            \"display_name\": \"Get User Profile\",\n            \"action_fields\": [\"gmail_user_id\"],\n        },\n        \"GMAIL_FETCH_MESSAGE_BY_MESSAGE_ID\": {\n            \"display_name\": \"Get Email By ID\",\n            \"action_fields\": [\"message_id\", \"gmail_user_id\", \"format\"],\n            \"get_result_field\": False,\n        },\n        \"GMAIL_CREATE_EMAIL_DRAFT\": {\n            \"display_name\": \"Create Draft Email\",\n            \"action_fields\": [\n                \"recipient_email\",\n                \"subject\",\n                \"body\",\n                \"cc\",\n                \"bcc\",\n                \"is_html\",\n                \"attachment\",\n                \"gmail_user_id\",\n            ],\n        },\n        \"GMAIL_FETCH_MESSAGE_BY_THREAD_ID\": {\n            \"display_name\": \"Get Message By Thread ID\",\n            \"action_fields\": [\"thread_id\", \"page_token\", \"gmail_user_id\"],\n            \"get_result_field\": False,\n        },\n        \"GMAIL_LIST_THREADS\": {\n            \"display_name\": \"List Email Threads\",\n            \"action_fields\": [\"max_results\", \"query\", \"gmail_user_id\", \"page_token\"],\n            \"get_result_field\": True,\n            \"result_field\": \"threads\",\n        },\n        \"GMAIL_REPLY_TO_THREAD\": {\n            \"display_name\": \"Reply To Thread\",\n            \"action_fields\": [\"thread_id\", \"message_body\", \"recipient_email\", \"gmail_user_id\", \"cc\", \"bcc\", \"is_html\"],\n        },\n        \"GMAIL_LIST_LABELS\": {\n            \"display_name\": \"List Email Labels\",\n            \"action_fields\": [\"gmail_user_id\"],\n            \"get_result_field\": True,\n            \"result_field\": \"labels\",\n        },\n        \"GMAIL_CREATE_LABEL\": {\n            \"display_name\": \"Create Email Label\",\n            \"action_fields\": [\"label_name\", \"label_list_visibility\", \"message_list_visibility\", \"gmail_user_id\"],\n        },\n        \"GMAIL_GET_PEOPLE\": {\n            \"display_name\": \"Get Contacts\",\n            \"action_fields\": [\"resource_name\", \"person_fields\"],\n            \"get_result_field\": True,\n            \"result_field\": \"people_data\",\n        },\n        \"GMAIL_REMOVE_LABEL\": {\n            \"display_name\": \"Delete Email Label\",\n            \"action_fields\": [\"label_id\", \"gmail_user_id\"],\n            \"get_result_field\": False,\n        },\n        \"GMAIL_GET_ATTACHMENT\": {\n            \"display_name\": \"Get Attachment\",\n            \"action_fields\": [\"message_id\", \"attachment_id\", \"file_name\", \"gmail_user_id\"],\n        },\n    }\n    _all_fields = {field for action_data in _actions_data.values() for field in action_data[\"action_fields\"]}\n    _bool_variables = {\"is_html\", \"include_spam_trash\"}\n\n    # Combine base inputs with Gmail-specific inputs\n    inputs = [\n        *ComposioBaseComponent._base_inputs,\n        # Email composition fields\n        MessageTextInput(\n            name=\"recipient_email\",\n            display_name=\"Recipient Email\",\n            info=\"Email address of the recipient\",\n            show=False,\n            required=True,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"subject\",\n            display_name=\"Subject\",\n            info=\"Subject of the email\",\n            show=False,\n            required=True,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"body\",\n            display_name=\"Body\",\n            required=True,\n            info=\"Content of the email\",\n            show=False,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"cc\",\n            display_name=\"CC\",\n            info=\"Email addresses to CC (Carbon Copy) in the email, separated by commas\",\n            show=False,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"bcc\",\n            display_name=\"BCC\",\n            info=\"Email addresses to BCC (Blind Carbon Copy) in the email, separated by commas\",\n            show=False,\n            advanced=True,\n        ),\n        BoolInput(\n            name=\"is_html\",\n            display_name=\"Is HTML\",\n            info=\"Specify whether the email body contains HTML content (true/false)\",\n            show=False,\n            value=False,\n            advanced=True,\n        ),\n        # Email retrieval and management fields\n        MessageTextInput(\n            name=\"gmail_user_id\",\n            display_name=\"User ID\",\n            info=\"The user's email address or 'me' for the authenticated user\",\n            show=False,\n            advanced=True,\n        ),\n        IntInput(\n            name=\"max_results\",\n            display_name=\"Max Results\",\n            required=True,\n            info=\"Maximum number of emails to be returned\",\n            show=False,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"message_id\",\n            display_name=\"Message ID\",\n            info=\"The ID of the specific email message\",\n            show=False,\n            required=True,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"thread_id\",\n            display_name=\"Thread ID\",\n            info=\"The ID of the email thread\",\n            show=False,\n            required=True,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"query\",\n            display_name=\"Query\",\n            info=\"Search query to filter emails (e.g., 'from:someone@email.com' or 'subject:hello')\",\n            show=False,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"message_body\",\n            display_name=\"Message Body\",\n            info=\"The body content of the message to be sent\",\n            show=False,\n            advanced=True,\n        ),\n        # Label management fields\n        MessageTextInput(\n            name=\"label_name\",\n            display_name=\"Label Name\",\n            info=\"Name of the Gmail label to create, modify, or filter by\",\n            show=False,\n            required=True,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"label_id\",\n            display_name=\"Label ID\",\n            info=\"The ID of the Gmail label\",\n            show=False,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"label_ids\",\n            display_name=\"Label Ids\",\n            info=\"Comma-separated list of label IDs to filter messages\",\n            show=False,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"label_list_visibility\",\n            display_name=\"Label List Visibility\",\n            info=\"The visibility of the label in the label list in the Gmail web interface\",\n            show=False,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"message_list_visibility\",\n            display_name=\"Message List Visibility\",\n            info=\"The visibility of the label in the message list in the Gmail web interface\",\n            show=False,\n            advanced=True,\n        ),\n        # Pagination and filtering\n        MessageTextInput(\n            name=\"page_token\",\n            display_name=\"Page Token\",\n            info=\"Token for retrieving the next page of results\",\n            show=False,\n            advanced=True,\n        ),\n        BoolInput(\n            name=\"include_spam_trash\",\n            display_name=\"Include messages from Spam/Trash\",\n            info=\"Include messages from SPAM and TRASH in the results\",\n            show=False,\n            value=False,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"format\",\n            display_name=\"Format\",\n            info=\"The format to return the message in. Possible values: minimal, full, raw, metadata\",\n            show=False,\n            advanced=True,\n        ),\n        # Contact management fields\n        MessageTextInput(\n            name=\"resource_name\",\n            display_name=\"Resource Name\",\n            info=\"The resource name of the person to provide information about\",\n            show=False,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"person_fields\",\n            display_name=\"Person fields\",\n            info=\"Fields to return for the person. Multiple fields can be specified by separating them with commas\",\n            show=False,\n            advanced=True,\n        ),\n        # Attachment handling\n        MessageTextInput(\n            name=\"attachment_id\",\n            display_name=\"Attachment ID\",\n            info=\"Id of the attachment\",\n            show=False,\n            required=True,\n            advanced=False,\n        ),\n        MessageTextInput(\n            name=\"file_name\",\n            display_name=\"File name\",\n            info=\"File name of the attachment file\",\n            show=False,\n            required=True,\n            advanced=False,\n        ),\n        FileInput(\n            name=\"attachment\",\n            display_name=\"Add Attachment\",\n            file_types=[\n                \"csv\",\n                \"txt\",\n                \"doc\",\n                \"docx\",\n                \"xls\",\n                \"xlsx\",\n                \"pdf\",\n                \"png\",\n                \"jpg\",\n                \"jpeg\",\n                \"gif\",\n                \"zip\",\n                \"rar\",\n                \"ppt\",\n                \"pptx\",\n            ],\n            info=\"Add an attachment\",\n            show=False,\n        ),\n    ]\n\n    def execute_action(self):\n        \"\"\"Execute action and return response as Message.\"\"\"\n        toolset = self._build_wrapper()\n\n        try:\n            self._build_action_maps()\n            # Get the display name from the action list\n            display_name = self.action[0][\"name\"] if isinstance(self.action, list) and self.action else self.action\n            # Use the display_to_key_map to get the action key\n            action_key = self._display_to_key_map.get(display_name)\n            if not action_key:\n                msg = f\"Invalid action: {display_name}\"\n                raise ValueError(msg)\n\n            enum_name = getattr(Action, action_key)\n            params = {}\n            if action_key in self._actions_data:\n                for field in self._actions_data[action_key][\"action_fields\"]:\n                    value = getattr(self, field)\n\n                    if value is None or value == \"\":\n                        continue\n\n                    if field in [\"cc\", \"bcc\", \"label_ids\"] and value:\n                        value = [item.strip() for item in value.split(\",\")]\n\n                    if field in self._bool_variables:\n                        value = bool(value)\n\n                    params[field] = value\n\n            if params.get(\"gmail_user_id\"):\n                params[\"user_id\"] = params.pop(\"gmail_user_id\")\n\n            result = toolset.execute_action(\n                action=enum_name,\n                params=params,\n            )\n            if not result.get(\"successful\"):\n                message_str = result.get(\"data\", {}).get(\"message\", \"{}\")\n                try:\n                    error_data = json.loads(message_str).get(\"error\", {})\n                except json.JSONDecodeError:\n                    error_data = {\"error\": \"Failed to get exact error details\"}\n                return {\n                    \"code\": error_data.get(\"code\"),\n                    \"message\": error_data.get(\"message\"),\n                    \"errors\": error_data.get(\"errors\", []),\n                    \"status\": error_data.get(\"status\"),\n                }\n\n            result_data = result.get(\"data\", {})\n            actions_data = self._actions_data.get(action_key, {})\n            # If 'get_result_field' is True and 'result_field' is specified, extract the data\n            # using 'result_field'. Otherwise, fall back to the entire 'data' field in the response.\n            if actions_data.get(\"get_result_field\") and actions_data.get(\"result_field\"):\n                result_data = result_data.get(actions_data.get(\"result_field\"), result.get(\"data\", []))\n            if len(result_data) != 1 and not actions_data.get(\"result_field\") and actions_data.get(\"get_result_field\"):\n                msg = f\"Expected a dict with a single key, got {len(result_data)} keys: {result_data.keys()}\"\n                raise ValueError(msg)\n            return result_data  # noqa: TRY300\n        except Exception as e:\n            logger.error(f\"Error executing action: {e}\")\n            display_name = self.action[0][\"name\"] if isinstance(self.action, list) and self.action else str(self.action)\n            msg = f\"Failed to execute {display_name}: {e!s}\"\n            raise ValueError(msg) from e\n\n    def update_build_config(self, build_config: dict, field_value: Any, field_name: str | None = None) -> dict:\n        return super().update_build_config(build_config, field_value, field_name)\n\n    def set_default_tools(self):\n        self._default_tools = {\n            \"GMAIL_SEND_EMAIL\",\n            \"GMAIL_FETCH_EMAILS\",\n        }\n"
+              },
+              "entity_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Entity ID",
+                "dynamic": false,
+                "info": "",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "entity_id",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": true,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "default"
+              },
+              "file_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "File name",
+                "dynamic": false,
+                "info": "File name of the attachment file",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "file_name",
+                "placeholder": "",
+                "required": true,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "format": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Format",
+                "dynamic": false,
+                "info": "The format to return the message in. Possible values: minimal, full, raw, metadata",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "format",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "gmail_user_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "User ID",
+                "dynamic": false,
+                "info": "The user's email address or 'me' for the authenticated user",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "gmail_user_id",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "include_spam_trash": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Include messages from Spam/Trash",
+                "dynamic": false,
+                "info": "Include messages from SPAM and TRASH in the results",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "include_spam_trash",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "is_html": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Is HTML",
+                "dynamic": false,
+                "info": "Specify whether the email body contains HTML content (true/false)",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "is_html",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "label_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Label ID",
+                "dynamic": false,
+                "info": "The ID of the Gmail label",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "label_id",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "label_ids": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Label Ids",
+                "dynamic": false,
+                "info": "Comma-separated list of label IDs to filter messages",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "label_ids",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "label_list_visibility": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Label List Visibility",
+                "dynamic": false,
+                "info": "The visibility of the label in the label list in the Gmail web interface",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "label_list_visibility",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "label_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Label Name",
+                "dynamic": false,
+                "info": "Name of the Gmail label to create, modify, or filter by",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "label_name",
+                "placeholder": "",
+                "required": true,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "max_results": {
+                "_input_type": "IntInput",
+                "advanced": false,
+                "display_name": "Max Results",
+                "dynamic": false,
+                "info": "Maximum number of emails to be returned",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "max_results",
+                "placeholder": "",
+                "required": true,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": ""
+              },
+              "message_body": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Message Body",
+                "dynamic": false,
+                "info": "The body content of the message to be sent",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "message_body",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "message_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Message ID",
+                "dynamic": false,
+                "info": "The ID of the specific email message",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "message_id",
+                "placeholder": "",
+                "required": true,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "message_list_visibility": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Message List Visibility",
+                "dynamic": false,
+                "info": "The visibility of the label in the message list in the Gmail web interface",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "message_list_visibility",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "page_token": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Page Token",
+                "dynamic": false,
+                "info": "Token for retrieving the next page of results",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "page_token",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "person_fields": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Person fields",
+                "dynamic": false,
+                "info": "Fields to return for the person. Multiple fields can be specified by separating them with commas",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "person_fields",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "query": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Query",
+                "dynamic": false,
+                "info": "Search query to filter emails (e.g., 'from:someone@email.com' or 'subject:hello')",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "query",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "recipient_email": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Recipient Email",
+                "dynamic": false,
+                "info": "Email address of the recipient",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "recipient_email",
+                "placeholder": "",
+                "required": true,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "resource_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Resource Name",
+                "dynamic": false,
+                "info": "The resource name of the person to provide information about",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "resource_name",
+                "placeholder": "",
+                "required": false,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "subject": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Subject",
+                "dynamic": false,
+                "info": "Subject of the email",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "subject",
+                "placeholder": "",
+                "required": true,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "thread_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Thread ID",
+                "dynamic": false,
+                "info": "The ID of the email thread",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "thread_id",
+                "placeholder": "",
+                "required": true,
+                "show": false,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "tools_metadata": {
+                "_input_type": "ToolsInput",
+                "advanced": false,
+                "display_name": "Actions",
+                "dynamic": false,
+                "info": "Modify tool names and descriptions to help agents understand when to use each tool.",
+                "is_list": true,
+                "list_add_label": "Add More",
+                "name": "tools_metadata",
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "tools",
+                "value": [
+                  {
+                    "args": {
+                      "attachment": {
+                        "default": null,
+                        "description": "File to attach to the email.",
+                        "examples": [],
+                        "title": "Attachment",
+                        "type": "string"
+                      },
+                      "bcc": {
+                        "default": [],
+                        "description": "'Bcc' (blind carbon copy) recipient email addresses.",
+                        "examples": [
+                          "[\"bcc.recipient@example.com\"]"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Bcc",
+                        "type": "array"
+                      },
+                      "body": {
+                        "description": "Email body content (plain text or HTML); `is_html` must be True if HTML. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "Hello Team,\n\nPlease find the attached report for your review.\n\nBest regards,\nYour Name",
+                          "<h1>Meeting Confirmation</h1><p>This email confirms our meeting scheduled for next Tuesday.</p>"
+                        ],
+                        "title": "Body",
+                        "type": "string"
+                      },
+                      "cc": {
+                        "default": [],
+                        "description": "'Cc' (carbon copy) recipient email addresses.",
+                        "examples": [
+                          "[\"cc.recipient1@example.com\", \"cc.recipient2@example.com\"]"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Cc",
+                        "type": "array"
+                      },
+                      "extra_recipients": {
+                        "default": [],
+                        "description": "Additional 'To' recipient email addresses.",
+                        "examples": [
+                          "[\"jane.doe@example.com\", \"another.recipient@example.com\"]"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Extra Recipients",
+                        "type": "array"
+                      },
+                      "is_html": {
+                        "default": false,
+                        "description": "Set to True if `body` is HTML, otherwise the action may fail. Please provide a value of type boolean.",
+                        "examples": [
+                          "True",
+                          "False"
+                        ],
+                        "title": "Is Html",
+                        "type": "boolean"
+                      },
+                      "recipient_email": {
+                        "description": "Primary recipient's email address. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "john.doe@example.com"
+                        ],
+                        "title": "Recipient Email",
+                        "type": "string"
+                      },
+                      "subject": {
+                        "description": "Email subject line. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "Project Update Q3",
+                          "Meeting Reminder"
+                        ],
+                        "title": "Subject",
+                        "type": "string"
+                      },
+                      "thread_id": {
+                        "default": null,
+                        "description": "ID of an existing Gmail thread to reply to; omit for new thread. Please provide a value of type string.",
+                        "examples": [
+                          "17f45ec49a9c3f1b"
+                        ],
+                        "title": "Thread Id",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "User's email address or 'me' for the authenticated user. Please provide a value of type string.",
+                        "examples": [
+                          "me",
+                          "user@example.com"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Creates a gmail email draft, supporting to/cc/bcc, subject, plain/html body (ensure `is html=true` for html), attachments, and threading.",
+                    "display_description": "Creates a gmail email draft, supporting to/cc/bcc, subject, plain/html body (ensure `is html=true` for html), attachments, and threading.",
+                    "display_name": "Create Draft Email",
+                    "name": "gmail_create_email_draft",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_CREATE_EMAIL_DRAFT"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "label_list_visibility": {
+                        "default": "labelShow",
+                        "description": "Controls how the label is displayed in the label list in the Gmail sidebar. Please provide a value of type string.",
+                        "examples": [
+                          "labelShow",
+                          "labelShowIfUnread",
+                          "labelHide"
+                        ],
+                        "title": "Label List Visibility",
+                        "type": "string"
+                      },
+                      "label_name": {
+                        "description": "The name for the new label. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "Work",
+                          "Important Documents",
+                          "Receipts 2024"
+                        ],
+                        "title": "Label Name",
+                        "type": "string"
+                      },
+                      "message_list_visibility": {
+                        "default": "show",
+                        "description": "Controls how messages with this label are displayed in the message list. Please provide a value of type string.",
+                        "examples": [
+                          "show",
+                          "hide"
+                        ],
+                        "title": "Message List Visibility",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "The email address of the user in whose account the label will be created. Please provide a value of type string.",
+                        "examples": [
+                          "me",
+                          "user@example.com"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Creates a new label with a unique name in the specified user's gmail account.",
+                    "display_description": "Creates a new label with a unique name in the specified user's gmail account.",
+                    "display_name": "Create Email Label",
+                    "name": "gmail_create_label",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_CREATE_LABEL"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "include_payload": {
+                        "default": true,
+                        "description": "Set to true to include full message payload (headers, body, attachments); false for metadata only. Please provide a value of type boolean.",
+                        "examples": [
+                          "True",
+                          "False"
+                        ],
+                        "title": "Include Payload",
+                        "type": "boolean"
+                      },
+                      "include_spam_trash": {
+                        "default": false,
+                        "description": "Set to true to include messages from 'SPAM' and 'TRASH'. Please provide a value of type boolean.",
+                        "examples": [
+                          "True",
+                          "False"
+                        ],
+                        "title": "Include Spam Trash",
+                        "type": "boolean"
+                      },
+                      "label_ids": {
+                        "default": null,
+                        "description": "Filter by label IDs; only messages with all specified labels are returned. Common IDs: 'INBOX', 'SPAM', 'TRASH', 'UNREAD', 'STARRED', 'IMPORTANT', 'CATEGORY_PERSONAL', 'CATEGORY_SOCIAL', 'CATEGORY_PROMOTIONS', 'CATEGORY_UPDATES', 'CATEGORY_FORUMS'. Use 'listLabels' action for custom IDs.",
+                        "examples": [
+                          "['INBOX', 'UNREAD']",
+                          "['IMPORTANT']",
+                          "[]"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Label Ids",
+                        "type": "array"
+                      },
+                      "max_results": {
+                        "default": 1,
+                        "description": "Maximum number of messages to retrieve per page. Please provide a value of type integer.",
+                        "examples": [
+                          "10",
+                          "100",
+                          "500"
+                        ],
+                        "title": "Max Results",
+                        "type": "integer"
+                      },
+                      "page_token": {
+                        "default": null,
+                        "description": "Token for retrieving a specific page, obtained from a previous response's `nextPageToken`. Omit for the first page. Please provide a value of type string.",
+                        "examples": [],
+                        "title": "Page Token",
+                        "type": "string"
+                      },
+                      "query": {
+                        "default": null,
+                        "description": "Gmail advanced search query (e.g., 'from:user subject:meeting'). Supports operators like 'from:', 'to:', 'subject:', 'label:', 'has:attachment', 'is:unread', 'after:YYYY/MM/DD', 'before:YYYY/MM/DD', AND/OR/NOT. Use quotes for exact phrases. Omit for no query filter. Please provide a value of type string.",
+                        "examples": [
+                          "from:john@example.com is:unread",
+                          "subject:meeting has:attachment",
+                          "after:2024/01/01 before:2024/02/01",
+                          "is:important OR is:starred",
+                          "label:work -label:spam"
+                        ],
+                        "title": "Query",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "User's email address or 'me' for the authenticated user. Please provide a value of type string.",
+                        "examples": [
+                          "me",
+                          "user@example.com"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Fetches a list of email messages from a gmail account, supporting filtering, pagination, and optional full content retrieval.",
+                    "display_description": "Fetches a list of email messages from a gmail account, supporting filtering, pagination, and optional full content retrieval.",
+                    "display_name": "Fetch Emails",
+                    "name": "gmail_fetch_emails",
+                    "readonly": true,
+                    "status": true,
+                    "tags": [
+                      "GMAIL_FETCH_EMAILS"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "format": {
+                        "default": "full",
+                        "description": "Format for message content: 'minimal' (ID/labels), 'full' (complete data), 'raw' (base64url string), 'metadata' (ID/labels/headers). Please provide a value of type string.",
+                        "examples": [
+                          "minimal",
+                          "full",
+                          "raw",
+                          "metadata"
+                        ],
+                        "title": "Format",
+                        "type": "string"
+                      },
+                      "message_id": {
+                        "description": "Unique ID of the email message to retrieve, obtainable from actions like 'List Messages'. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "xsdfe3264vrfw"
+                        ],
+                        "title": "Message Id",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "User's email address or 'me' for the authenticated user. Please provide a value of type string.",
+                        "examples": [
+                          "user@example.com",
+                          "me"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Fetches a specific email message by its id, provided the `message id` exists and is accessible to the authenticated `user id`.",
+                    "display_description": "Fetches a specific email message by its id, provided the `message id` exists and is accessible to the authenticated `user id`.",
+                    "display_name": "Get Email By ID",
+                    "name": "gmail_fetch_message_by_message_id",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_FETCH_MESSAGE_BY_MESSAGE_ID"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "page_token": {
+                        "default": "",
+                        "description": "Opaque page token for fetching a specific page of messages if results are paginated. Please provide a value of type string.",
+                        "examples": [
+                          "CiAKGhIKJdealEffectivelyPageToken"
+                        ],
+                        "title": "Page Token",
+                        "type": "string"
+                      },
+                      "thread_id": {
+                        "description": "Unique ID of the thread, obtainable from actions like 'listThreads' or 'fetchEmails'. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "xsdfe3264vrfw"
+                        ],
+                        "title": "Thread Id",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "The email address of the user. Please provide a value of type string.",
+                        "examples": [
+                          "me",
+                          "user@example.com"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Retrieves messages from a gmail thread using its `thread id`, where the thread must be accessible by the specified `user id`.",
+                    "display_description": "Retrieves messages from a gmail thread using its `thread id`, where the thread must be accessible by the specified `user id`.",
+                    "display_name": "Get Message By Thread ID",
+                    "name": "gmail_fetch_message_by_thread_id",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_FETCH_MESSAGE_BY_THREAD_ID"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "attachment_id": {
+                        "description": "ID of the attachment to retrieve. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "A_PART0.1_18exampleAttachmentId7f9"
+                        ],
+                        "title": "Attachment Id",
+                        "type": "string"
+                      },
+                      "file_name": {
+                        "description": "Desired filename for the downloaded attachment. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "invoice.pdf",
+                          "report.docx"
+                        ],
+                        "title": "File Name",
+                        "type": "string"
+                      },
+                      "message_id": {
+                        "description": "Immutable ID of the message containing the attachment. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "18exampleMessageId7f9"
+                        ],
+                        "title": "Message Id",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "User's email address ('me' for authenticated user). Please provide a value of type string.",
+                        "examples": [
+                          "me",
+                          "user@example.com"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Retrieves a specific attachment by id from a message in a user's gmail mailbox, requiring valid message and attachment ids.",
+                    "display_description": "Retrieves a specific attachment by id from a message in a user's gmail mailbox, requiring valid message and attachment ids.",
+                    "display_name": "Get Attachment",
+                    "name": "gmail_get_attachment",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_GET_ATTACHMENT"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "other_contacts": {
+                        "default": false,
+                        "description": "If true, retrieves 'Other Contacts' (people interacted with but not explicitly saved), ignoring `resource_name` and enabling pagination/sync. If false, retrieves information for the single person specified by `resource_name`. Please provide a value of type boolean.",
+                        "examples": [],
+                        "title": "Other Contacts",
+                        "type": "boolean"
+                      },
+                      "page_size": {
+                        "default": 10,
+                        "description": "The number of 'Other Contacts' to return per page. Applicable only when `other_contacts` is true. Please provide a value of type integer.",
+                        "examples": [],
+                        "title": "Page Size",
+                        "type": "integer"
+                      },
+                      "page_token": {
+                        "default": "",
+                        "description": "An opaque token from a previous response to retrieve the next page of 'Other Contacts' results. Applicable only when `other_contacts` is true and paginating. Please provide a value of type string.",
+                        "examples": [],
+                        "title": "Page Token",
+                        "type": "string"
+                      },
+                      "person_fields": {
+                        "default": "emailAddresses,names,birthdays,genders",
+                        "description": "A comma-separated field mask to restrict which fields on the person (or persons) are returned. Consult the Google People API documentation for a comprehensive list of valid fields. Please provide a value of type string.",
+                        "examples": [
+                          "names,emailAddresses",
+                          "emailAddresses,names,birthdays,genders",
+                          "addresses,phoneNumbers,metadata"
+                        ],
+                        "title": "Person Fields",
+                        "type": "string"
+                      },
+                      "resource_name": {
+                        "default": "people/me",
+                        "description": "Resource name identifying the person for whom to retrieve information (like the authenticated user or a specific contact). Used only when `other_contacts` is false. Please provide a value of type string.",
+                        "examples": [
+                          "people/me",
+                          "people/c12345678901234567890",
+                          "people/102345678901234567890"
+                        ],
+                        "title": "Resource Name",
+                        "type": "string"
+                      },
+                      "sync_token": {
+                        "default": "",
+                        "description": "A token from a previous 'Other Contacts' list call to retrieve only changes since the last sync; leave empty for an initial full sync. Applicable only when `other_contacts` is true. Please provide a value of type string.",
+                        "examples": [],
+                        "title": "Sync Token",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Retrieves either a specific person's details (using `resource name`) or lists 'other contacts' (if `other contacts` is true), with `person fields` specifying the data to return.",
+                    "display_description": "Retrieves either a specific person's details (using `resource name`) or lists 'other contacts' (if `other contacts` is true), with `person fields` specifying the data to return.",
+                    "display_name": "Get Contacts",
+                    "name": "gmail_get_people",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_GET_PEOPLE"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "user_id": {
+                        "default": "me",
+                        "description": "The email address of the Gmail user whose profile is to be retrieved, or the special value 'me' to indicate the currently authenticated user. Please provide a value of type string.",
+                        "examples": [
+                          "user@example.com",
+                          "me"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Retrieves key gmail profile information (email address, message/thread totals, history id) for a user.",
+                    "display_description": "Retrieves key gmail profile information (email address, message/thread totals, history id) for a user.",
+                    "display_name": "Get User Profile",
+                    "name": "gmail_get_profile",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_GET_PROFILE"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "user_id": {
+                        "default": "me",
+                        "description": "Identifies the Gmail account (owner's email or 'me' for authenticated user) for which labels will be listed. Please provide a value of type string.",
+                        "examples": [
+                          "me",
+                          "user@example.com"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Retrieves a list of all system and user-created labels for the specified gmail account.",
+                    "display_description": "Retrieves a list of all system and user-created labels for the specified gmail account.",
+                    "display_name": "List Email Labels",
+                    "name": "gmail_list_labels",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_LIST_LABELS"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of threads to return. Please provide a value of type integer.",
+                        "examples": [
+                          "10",
+                          "50",
+                          "100"
+                        ],
+                        "title": "Max Results",
+                        "type": "integer"
+                      },
+                      "page_token": {
+                        "default": "",
+                        "description": "Token from a previous response to retrieve a specific page of results; omit for the first page. Please provide a value of type string.",
+                        "examples": [
+                          "abcPageToken123"
+                        ],
+                        "title": "Page Token",
+                        "type": "string"
+                      },
+                      "query": {
+                        "default": "",
+                        "description": "Filter for threads, using Gmail search query syntax (e.g., 'from:user@example.com is:unread'). Please provide a value of type string.",
+                        "examples": [
+                          "is:unread",
+                          "from:john.doe@example.com",
+                          "subject:important"
+                        ],
+                        "title": "Query",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "The user's email address or 'me' to specify the authenticated Gmail account. Please provide a value of type string.",
+                        "examples": [
+                          "me",
+                          "user@example.com"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Retrieves a list of email threads from a gmail account, identified by `user id` (email address or 'me'), supporting filtering and pagination.",
+                    "display_description": "Retrieves a list of email threads from a gmail account, identified by `user id` (email address or 'me'), supporting filtering and pagination.",
+                    "display_name": "List Email Threads",
+                    "name": "gmail_list_threads",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_LIST_THREADS"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "label_id": {
+                        "description": "ID of the user-created label to be permanently deleted; must exist and not be a system label. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "Label_123",
+                          "Label_xyz789"
+                        ],
+                        "title": "Label Id",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "User's email address or 'me' for the authenticated user. Please provide a value of type string.",
+                        "examples": [
+                          "me",
+                          "user@example.com"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Permanently deletes a specific, existing user-created gmail label by its id for a user; cannot delete system labels.",
+                    "display_description": "Permanently deletes a specific, existing user-created gmail label by its id for a user; cannot delete system labels.",
+                    "display_name": "Delete Email Label",
+                    "name": "gmail_remove_label",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_REMOVE_LABEL"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "bcc": {
+                        "default": [],
+                        "description": "BCC recipients' email addresses (hidden from other recipients).",
+                        "examples": [
+                          "[\"bcc.recipient@example.com\"]"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Bcc",
+                        "type": "array"
+                      },
+                      "cc": {
+                        "default": [],
+                        "description": "CC recipients' email addresses.",
+                        "examples": [
+                          "[\"cc.recipient1@example.com\", \"cc.recipient2@example.com\"]"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Cc",
+                        "type": "array"
+                      },
+                      "extra_recipients": {
+                        "default": [],
+                        "description": "Additional 'To' recipients' email addresses.",
+                        "examples": [
+                          "[\"jane.doe@example.com\", \"another.person@example.com\"]"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Extra Recipients",
+                        "type": "array"
+                      },
+                      "is_html": {
+                        "default": false,
+                        "description": "Indicates if `message_body` is HTML; if True, body must be valid HTML, if False, body should not contain HTML tags. Please provide a value of type boolean.",
+                        "examples": [
+                          "True",
+                          "False"
+                        ],
+                        "title": "Is Html",
+                        "type": "boolean"
+                      },
+                      "message_body": {
+                        "description": "Content of the reply message, either plain text or HTML. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "Dear Sir, Nice talking to you. Yours respectfully, John"
+                        ],
+                        "title": "Message Body",
+                        "type": "string"
+                      },
+                      "recipient_email": {
+                        "description": "Primary recipient's email address. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "john@doe.com"
+                        ],
+                        "title": "Recipient Email",
+                        "type": "string"
+                      },
+                      "thread_id": {
+                        "description": "Identifier of the Gmail thread for the reply. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "x53r3vdevff"
+                        ],
+                        "title": "Thread Id",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "Identifier for the user sending the reply; 'me' refers to the authenticated user. Please provide a value of type string.",
+                        "examples": [
+                          "me",
+                          "user@example.com"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Sends a reply within a specific gmail thread using the original thread's subject, requiring a valid `thread id` and correctly formatted email addresses.",
+                    "display_description": "Sends a reply within a specific gmail thread using the original thread's subject, requiring a valid `thread id` and correctly formatted email addresses.",
+                    "display_name": "Reply To Thread",
+                    "name": "gmail_reply_to_thread",
+                    "readonly": true,
+                    "status": false,
+                    "tags": [
+                      "GMAIL_REPLY_TO_THREAD"
+                    ]
+                  },
+                  {
+                    "args": {
+                      "attachment": {
+                        "default": null,
+                        "description": "File to attach; ensure `s3key`, `mimetype`, and `name` are set if provided. Omit or set to null for no attachment.",
+                        "examples": [],
+                        "title": "Attachment",
+                        "type": "string"
+                      },
+                      "bcc": {
+                        "default": [],
+                        "description": "Blind Carbon Copy (BCC) recipients' email addresses.",
+                        "examples": [
+                          [
+                            "auditor@example.com"
+                          ]
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Bcc",
+                        "type": "array"
+                      },
+                      "body": {
+                        "description": "Email content (plain text or HTML); if HTML, `is_html` must be `True`. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "Hello team, let's discuss the project updates tomorrow.",
+                          "<h1>Welcome!</h1><p>Thank you for signing up.</p>"
+                        ],
+                        "title": "Body",
+                        "type": "string"
+                      },
+                      "cc": {
+                        "default": [],
+                        "description": "Carbon Copy (CC) recipients' email addresses.",
+                        "examples": [
+                          [
+                            "manager@example.com",
+                            "teamlead@example.com"
+                          ]
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Cc",
+                        "type": "array"
+                      },
+                      "extra_recipients": {
+                        "default": [],
+                        "description": "Additional 'To' recipients' email addresses (not Cc or Bcc).",
+                        "examples": [
+                          [
+                            "jane.doe@example.com",
+                            "support@example.com"
+                          ]
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "title": "Extra Recipients",
+                        "type": "array"
+                      },
+                      "is_html": {
+                        "default": false,
+                        "description": "Set to `True` if the email body contains HTML tags. Please provide a value of type boolean.",
+                        "examples": [],
+                        "title": "Is Html",
+                        "type": "boolean"
+                      },
+                      "recipient_email": {
+                        "description": "Primary recipient's email address. Please provide a value of type string. This parameter is required.",
+                        "examples": [
+                          "john@doe.com"
+                        ],
+                        "title": "Recipient Email",
+                        "type": "string"
+                      },
+                      "subject": {
+                        "default": null,
+                        "description": "Subject line of the email. Please provide a value of type string.",
+                        "examples": [
+                          "Project Update Meeting",
+                          "Your Weekly Newsletter"
+                        ],
+                        "title": "Subject",
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "default": "me",
+                        "description": "User's email address; the literal 'me' refers to the authenticated user. Please provide a value of type string.",
+                        "examples": [
+                          "user@example.com",
+                          "me"
+                        ],
+                        "title": "User Id",
+                        "type": "string"
+                      }
+                    },
+                    "description": "Sends an email via gmail api using the authenticated user's google profile display name, requiring `is html=true` if the body contains html and valid `s3key`, `mimetype`, `name` for any attachment.",
+                    "display_description": "Sends an email via gmail api using the authenticated user's google profile display name, requiring `is html=true` if the body contains html and valid `s3key`, `mimetype`, `name` for any attachment.",
+                    "display_name": "Send Email",
+                    "name": "gmail_send_email",
+                    "readonly": true,
+                    "status": true,
+                    "tags": [
+                      "GMAIL_SEND_EMAIL"
+                    ]
+                  }
+                ]
+              }
+            },
+            "tool_mode": true
+          },
+          "showNode": true,
+          "type": "GmailAPI"
+        },
+        "dragging": false,
+        "id": "GmailAPI-lXhKn",
+        "measured": {
+          "height": 278,
+          "width": 320
+        },
+        "position": {
+          "x": 1287.2742152561198,
+          "y": 518.0802087811832
+        },
+        "selected": false,
+        "type": "genericNode"
       }
     ],
     "viewport": {
-      "x": -169.51295922956706,
-      "y": 159.00765761472042,
-      "zoom": 0.558027912173994
+      "x": -49.494841466301295,
+      "y": 123.45941931374554,
+      "zoom": 0.39482178627007586
     }
   },
   "description": "Travel Chatbot.",
   "endpoint_name": null,
-  "folder_id": "4c638c1d-0290-4cc5-bb51-927f28a6a5fe",
+  "folder_id": "73931007-18cc-4245-a1fb-4cf1089e4f5b",
   "fs_path": null,
   "gradient": null,
   "icon": null,
   "icon_bg_color": null,
-  "id": "e697830e-aa5c-432b-a98d-853a8926170e",
+  "id": "de5de7d9-d61e-406b-b9b3-dd7910d53cba",
   "is_component": false,
   "locked": false,
   "mcp_enabled": true,
-  "name": "TravelMate   (25)",
+  "name": "TravelMate",
   "tags": [
     "assistants",
     "agents"
   ],
-  "updated_at": "2025-06-09T09:40:01+00:00",
-  "user_id": "6d668c00-ccbf-4ae4-a771-a019e303e27b",
+  "updated_at": "2025-06-12T13:50:25+00:00",
+  "user_id": "adf1b22f-7bca-4f91-a4ff-30922804d507",
   "webhook": false
 }

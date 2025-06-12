@@ -31,6 +31,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
+
   # Langflow
   langflow:
     image: langflowai/langflow:latest
@@ -49,12 +50,12 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/health"]
       interval: 30s
       timeout: 10s
-      retries: 5
-  # Flow uploader (initialize Langflow with custom flow)
+      retries: 5  # Flow uploader (initialize Langflow with custom flow)
   uploader:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: travel_uploader
     depends_on:
       langflow:
         condition: service_healthy
@@ -63,10 +64,29 @@ services:
       - FLOW_FILE_PATH=/app/TravelMate.json
     volumes:
       - ./custom/TravelMate.json:/app/TravelMate.json
-      - ./manage_flow.py:/app/manage_flow.py
+      - ./backend/scripts/manage_flow.py:/app/manage_flow.py
       - flow_data:/app/data
     restart: "no"
-    command: python manage_flow.py
+    command: python manage_flow.py  # Flow ID Auto-Sync Service
+  flow_sync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: travel_flow_sync
+    depends_on:
+      uploader:
+        condition: service_completed_successfully
+      langflow:
+        condition: service_healthy
+    environment:
+      - LANGFLOW_HOST=http://langflow:8080
+      - BACKEND_HOST=http://travel_backend:8000
+    volumes:
+      - ./backend/scripts/flow_sync_manager.py:/app/flow_sync_manager.py
+      - flow_data:/app/data
+    restart: "no"
+    command: python flow_sync_manager.py
+
   # Backend API
   backend:
     build:
@@ -89,7 +109,7 @@ services:
         condition: service_healthy
       langflow:
         condition: service_healthy
-      uploader:
+      flow_sync:
         condition: service_completed_successfully
     volumes:
       - ./backend:/app
@@ -99,7 +119,6 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
-
   # Frontend
   frontend:
     build:
@@ -110,12 +129,32 @@ services:
       - "3000:3000"
     environment:
       - REACT_APP_API_URL=http://localhost:8000
+      - REACT_APP_LANGFLOW_URL=http://localhost:8080
     depends_on:
       backend:
         condition: service_healthy
     volumes:
       - ./frontend:/app
       - /app/node_modules
+      - flow_data:/app/data  # Post-Startup Flow ID Sync (runs after all services are ready)
+  post_sync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: travel_post_sync
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_started
+    environment:
+      - LANGFLOW_HOST=http://langflow:8080
+      - BACKEND_HOST=http://travel_backend:8000
+    volumes:
+      - ./backend/scripts/post_startup_sync.py:/app/post_startup_sync.py
+      - flow_data:/app/data
+    restart: "no"
+    command: python post_startup_sync.py
 
 volumes:
   langflow_data:

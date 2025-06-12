@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy flow management script
-COPY manage_flow.py .
+# Copy flow management scripts from backend/scripts
+COPY backend/scripts/ .
 
 # Set environment variables
 ENV LANGFLOW_HOST=http://langflow:8080

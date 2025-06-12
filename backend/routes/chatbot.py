@@ -115,3 +115,23 @@ async def delete_session(
     db.commit()
     
     return {"message": "Session deleted successfully"}
+
+@router.get("/flow-id")
+async def get_flow_id():
+    """Lấy flow ID hiện tại từ Langflow service - Public endpoint"""
+    try:
+        flow_id = await langflow_service.get_flow_id()
+        return {"flow_id": flow_id, "status": "success"}
+    except Exception as e:
+        # Log error but still return something
+        print(f"❌ Error getting flow ID: {e}")
+        return {"flow_id": None, "status": "error", "message": str(e)}
+
+@router.get("/health")
+async def check_langflow_health():
+    """Kiểm tra trạng thái Langflow - Public endpoint"""
+    try:
+        is_healthy = await langflow_service.health_check()
+        return {"healthy": is_healthy, "status": "success"}
+    except Exception as e:
+        return {"healthy": False, "status": "error", "error": str(e)}

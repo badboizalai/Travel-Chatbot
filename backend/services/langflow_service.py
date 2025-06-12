@@ -17,9 +17,9 @@ class LangflowService:
         self._cached_flow_id = None
         
     def get_persistent_flow_id(self) -> Optional[str]:
-        """Lấy flow ID từ file persistent"""
+        """Lấy flow ID từ file persistent và sync data"""
         try:
-            # Thử đọc từ volume mount
+            # 1. Thử đọc từ uploader persistent file
             flow_id_file = "/app/data/flow_id.txt"
             if os.path.exists(flow_id_file):
                 with open(flow_id_file, 'r') as f:
@@ -27,6 +27,18 @@ class LangflowService:
                     if flow_id:
                         print(f"✅ Found persistent flow ID: {flow_id}")
                         return flow_id
+            
+            # 2. Thử đọc từ backend sync data  
+            sync_file = "/app/data/backend_env_sync.json"
+            if os.path.exists(sync_file):
+                with open(sync_file, 'r') as f:
+                    import json
+                    sync_data = json.load(f)
+                    flow_id = sync_data.get('flow_id')
+                    if flow_id:
+                        print(f"✅ Found flow ID from sync data: {flow_id}")
+                        return flow_id
+                        
         except Exception as e:
             print(f"⚠️ Could not read persistent flow ID: {e}")
         return None
