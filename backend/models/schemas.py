@@ -40,8 +40,16 @@ class LoginRequest(BaseModel):
     password: str
 
 # Chat schemas
+class UserContext(BaseModel):
+    userId: Optional[int] = None
+    email: Optional[str] = None
+    username: Optional[str] = None
+    fullName: Optional[str] = None
+    isAuthenticated: bool = False
+
 class ChatMessage(BaseModel):
     message: str
+    user_context: Optional[UserContext] = None
 
 class ChatResponse(BaseModel):
     response: str

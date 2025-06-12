@@ -35,9 +35,17 @@ async def send_message(
         db.add(session)
         db.commit()
         db.refresh(session)
+      # Prepare user context
+    user_context = {
+        'userId': current_user.id,
+        'email': current_user.email,
+        'username': current_user.username,
+        'fullName': current_user.full_name,
+        'isAuthenticated': True
+    }
     
-    # Send message to Langflow
-    response = await langflow_service.send_message(message.message, session.session_id)
+    # Send message to Langflow with user context
+    response = await langflow_service.send_message(message.message, session.session_id, user_context)
     
     # Save message and response to database
     chat_message = ChatMessage(
@@ -135,3 +143,41 @@ async def check_langflow_health():
         return {"healthy": is_healthy, "status": "success"}
     except Exception as e:
         return {"healthy": False, "status": "error", "error": str(e)}
+
+@router.post("/chat", response_model=ChatResponse)
+async def chat_message(
+    message: ChatMessageSchema,
+    session_id: str = None,
+    db: Session = Depends(get_db)
+):
+    """
+    Public endpoint for ChatWidget to send messages
+    Accepts user context from frontend if user is authenticated
+    """
+    try:
+        # Generate session ID if not provided
+        if not session_id:
+            session_id = str(uuid.uuid4())
+          # Extract user context from request
+        user_context = None
+        if hasattr(message, 'user_context') and message.user_context:
+            user_context = message.user_context
+        
+        # Send message to Langflow with user context
+        response = await langflow_service.send_message(
+            message.message, 
+            session_id, 
+            user_context
+        )
+        
+        return ChatResponse(
+            response=response.get("response", "Xin lỗi, tôi không thể trả lời câu hỏi này."),
+            session_id=session_id
+        )
+        
+    except Exception as e:
+        print(f"❌ Chat error: {e}")
+        return ChatResponse(
+            response="Xin lỗi, tôi đang gặp vấn đề kỹ thuật. Vui lòng thử lại sau!",
+            session_id=session_id or str(uuid.uuid4())
+        )

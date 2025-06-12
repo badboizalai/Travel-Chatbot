@@ -65,4 +65,23 @@ export const authService = {
   },
 };
 
+export const chatService = {
+  async sendMessage(
+    message: string,
+    userContext?: any,
+    sessionId?: string
+  ): Promise<{ response: string; session_id: string }> {
+    const payload = {
+      message,
+      user_context: userContext,
+    };
+
+    const url = sessionId
+      ? `/api/chatbot/chat?session_id=${sessionId}`
+      : '/api/chatbot/chat';
+    const response = await api.post(url, payload);
+    return response.data;
+  },
+};
+
 export default api;

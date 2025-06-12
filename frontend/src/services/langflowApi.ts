@@ -48,7 +48,7 @@ class LangflowApiService {
   constructor() {
     // Use the latest working flow ID from the uploader logs (fallback)
     this.baseUrl = 'http://localhost:8080';
-    this.flowId = '8663b772-82e1-4833-9240-cfa6084814f7';
+    this.flowId = '032a160c-7ac3-41db-b3ee-cfcf15ccdc8c';
     
     // Xác định backend URL dựa vào environment
     this.backendUrl = this.getBackendUrl();
@@ -149,16 +149,32 @@ class LangflowApiService {
       throw error; // Re-throw for retry logic
     }
   }
-  async sendMessage(message: string, sessionId: string = 'user-session'): Promise<string> {
+  async sendMessage(message: string, sessionId: string = 'user-session', userContext?: any): Promise<string> {
     try {
+      // Prepare the message payload
+      let messagePayload = message;
+      
+      // If user context is provided, add it to the message
+      if (userContext && userContext.isAuthenticated) {
+        const userInfo = [];
+        if (userContext.email) userInfo.push(`Email: ${userContext.email}`);
+        if (userContext.fullName) userInfo.push(`Tên: ${userContext.fullName}`);
+        if (userContext.username) userInfo.push(`Username: ${userContext.username}`);
+        
+        if (userInfo.length > 0) {
+          messagePayload = `[Thông tin người dùng: ${userInfo.join(', ')}]\n\n${message}`;
+        }
+      }
+      
       const response = await fetch(`${this.baseUrl}/api/v1/run/${this.flowId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          input_value: message,
+          input_value: messagePayload,
           session_id: sessionId,
+          user_context: userContext
         }),
       });
 
