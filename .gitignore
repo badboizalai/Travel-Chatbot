@@ -45,8 +45,6 @@ pip-delete-this-directory.txt
 ehthumbs.db
 Thumbs.db
 
-# Docker
-.dockerignore
 
 # Project specific
 *.log
