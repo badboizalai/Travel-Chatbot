@@ -1,0 +1,35 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy source code first
+COPY . .
+
+# Create startup script with correct line endings (overwrite any existing one)
+RUN echo '#!/bin/sh' > startup.sh && \
+    echo '# Frontend startup script with Flow ID sync' >> startup.sh && \
+    echo '' >> startup.sh && \
+    echo 'echo "[$(date)] Starting frontend with Flow ID sync..."' >> startup.sh && \
+    echo '' >> startup.sh && \
+    echo '# Sync Flow ID from shared data if available' >> startup.sh && \
+    echo 'if [ -f "/app/scripts/sync_flow_id_frontend.js" ]; then' >> startup.sh && \
+    echo '    echo "[$(date)] Syncing Flow ID from shared data..."' >> startup.sh && \
+    echo '    node /app/scripts/sync_flow_id_frontend.js' >> startup.sh && \
+    echo 'fi' >> startup.sh && \
+    echo '' >> startup.sh && \
+    echo '# Start the main application' >> startup.sh && \
+    echo 'echo "[$(date)] Starting React development server..."' >> startup.sh && \
+    echo 'exec npm start' >> startup.sh && \
+    chmod +x startup.sh
+
+# Expose port
+EXPOSE 3000
+
+# Start the application with sync
+CMD ["./startup.sh"]
