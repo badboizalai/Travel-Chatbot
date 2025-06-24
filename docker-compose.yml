@@ -112,6 +112,8 @@ services:
     volumes:
       - ./backend:/app
       - flow_data:/app/data
+      # Fix line endings and permissions before running startup script
+    command: ["/bin/bash", "-c", "sed -i 's/\r$$//' /app/startup.sh && chmod +x /app/startup.sh && exec /app/startup.sh"]
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s

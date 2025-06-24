@@ -15,8 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Make startup script executable
-RUN chmod +x startup.sh
+# Convert line endings and make startup script executable (must be done before switching to non-root user)
+RUN sed -i 's/\r$//' startup.sh && chmod +x startup.sh
 
 # Create non-root user
 RUN useradd --create-home --shell /bin/bash app && chown -R app:app /app
@@ -26,4 +26,4 @@ USER app
 EXPOSE 8000
 
 # Command to run the application with startup script
-CMD ["./startup.sh"]
+CMD ["/bin/bash", "./startup.sh"]
